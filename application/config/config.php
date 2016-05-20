@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'localhost:8888/RNL';
+$config['base_url']	= 'localhost';
 
 /*
 |--------------------------------------------------------------------------
