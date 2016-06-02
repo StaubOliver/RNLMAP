@@ -86,7 +86,7 @@ class MapModel extends CI_Model {
 */      
 
     	if ($data['collector'] != "-1"){
-    		$where[$i] = "colletor = '" . $data['collector']."'";
+    		$where[$i] = "collector = '" . $data['collector']."'";
     		$i += 1;
     	}
 
