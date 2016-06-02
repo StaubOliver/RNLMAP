@@ -154,6 +154,7 @@ class MapModel extends CI_Model {
 
             //return the data
             return $return;
+        }
     }
 
     /*function submitFeedback($data, $filter){
