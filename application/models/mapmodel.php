@@ -59,13 +59,17 @@ class MapModel extends CI_Model {
         }
     }
 
+    function in_age_range($min, $max, $test){
+
+    }
+
     /**
     *   Load all fossils given the informations of genus, species, age and collector form every project
     */
     function loadFossils($data){
 
     	//using the data from the filter we create the where statement for querying the database
-   /* 	$where = [];
+    	$where = [];
     	$i = 0;
     	
     	if ($data['genus'] != "-1"){
@@ -73,34 +77,40 @@ class MapModel extends CI_Model {
 			$i += 1;
     	}
 
-    	if ($data['species'] != "-1"){
-    		$where[$i] = "species = " . $data['species'];
-    		$i += 1;
-    	}
-
-    	/*$where[$i] = "age_min = " . $data['age_min'];
+/*
+    	$where[$i] = "age_min = " . $data['age_min'];
         $i += 1;
 
         $where[$i] = "age_max = " . $data['age_max'];
         $i += 1;
-        */
+*/      
 
-    /*	if ($data['collector'] != "-1"){
+    	if ($data['collector'] != "-1"){
     		$where[$i] = "colletor = " . $data['collector'];
     		$i += 1;
     	}
 
         $where_string = "";
 
-    	for ($j=0; $j<$i-1; $j++)
-    	{
-			$where_string .= $where[$j] . " AND ";
-    	}
-    	
-        $where_string = $where_string . $where[$i];
-*/
-    	//Now we look the projects_master table to give us the data_table foreach project
-    	$query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
+        if ($i != 0)
+        {
+        	for ($j=0; $j<$i-1; $j++)
+        	{
+    			$where_string .= $where[$j] . " AND ";
+        	}
+        	
+            $where_string = $where_string . $where[$i];
+        }
+        else {
+            $where_string = " 1";
+        }
+
+        $query=NULL;
+
+    	//Now we look at the projects_master table to give us the data_table foreach project
+        if($data['project']=="-1"){
+            $query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
+        }
 
     	$return = [];
         
@@ -118,14 +128,20 @@ class MapModel extends CI_Model {
                 $i = 0; 
                 foreach ($query2->result_array() as $row)
                 {
-                    
-                    $temp = $this->geocode($row['country'].' '.$row['place']);
+                    if ($data['genus']!="-1"){
+                        if ($row['genus']==$data['genus']){
+
+                        }
+                    }
+
+
+                    /*$temp = $this->geocode($row['country'].' '.$row['place']);
                     
                     if ($temp != false) {
                         $row['lattitude'] = $temp[0];
                         $row['longitude'] = $temp[1];
-                    }
-                    //return $row;
+                    
+                    */                    //return $row;
                     $return[] = $row;  
                     $i++;
                     if ($i>10)

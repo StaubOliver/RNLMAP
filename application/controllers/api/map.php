@@ -17,6 +17,8 @@ class Map extends MY_Controller {
 	}
 
 	public function loadfossils(){
+
+		$project = "-1";
 		$genus = $this->uri->segment(4);
 		$species = $this->uri->segment(5);
 		$age_min = $this->uri->segment(6);
@@ -29,6 +31,7 @@ class Map extends MY_Controller {
 		$map_zoom = $this->uri->segment(13);
 
 		$data = array(
+			'project' => $project,
 			'genus' => $genus,
 			'species' => $species,
 			'age_min' => $age_min,
