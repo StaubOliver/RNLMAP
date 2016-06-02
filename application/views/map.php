@@ -275,6 +275,7 @@
 							<h6>Genus</h6>
 						</div>
 						<div class="col-md-8">
+							<!-- 
 							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
 						  		<option value="" selected>All Genuses</option>
 								<optgroup label="Coral genera">	
@@ -375,6 +376,20 @@
 									<option value="Zaphrentis">Zaphrentis</option>
 								</optgroup>
 						  	</select>
+						  -->
+
+							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
+								<option value="" selected>All Genuses</option>
+								<optgroup label="Coral genera">	
+							<?php
+								foreach($data as $genus){
+									echo "<option value='".$genus."'>".$genus."</option>"
+								}
+
+							?>
+								</optgroup>
+							</select>
+
 						</div>
 					</div>
 
