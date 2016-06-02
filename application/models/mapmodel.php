@@ -118,7 +118,7 @@ class MapModel extends CI_Model {
 
                 foreach ($query2->result_array() as $row)
                 {
-                    $row["lat"] = "12";
+                    $row[] = "12";
                     return $row;
 
                 }
