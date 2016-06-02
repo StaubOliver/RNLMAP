@@ -271,7 +271,8 @@
 						</div>
 					</div>
 
-					<!-- Project -->
+					<!-- Place -->
+					<!--
 					<div class="row filter-element">
 						<div class="col-md-3">
 							<h6>Place</h6>
@@ -280,6 +281,7 @@
 							<h6>Go to a place</h6>
 						</div>
 					</div>
+					-->
 
 					<!-- Genus --> 
 					<div class="row filter-element">
