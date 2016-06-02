@@ -19,7 +19,7 @@ class MapModel extends CI_Model {
         $address = urlencode($address);
          
         // google map geocode api url
-        $url = "http://maps.google.com/maps/api/geocode/json?address=".$address."&key=AIzaSyBUmXudJDRuXR6ZiUxuiskGnf13pwTvAa0";
+        $url = "https://maps.google.com/maps/api/geocode/json?address=".$address."&key=AIzaSyBUmXudJDRuXR6ZiUxuiskGnf13pwTvAa0";
      
         // get the json response
         $resp_json = file_get_contents($url);
