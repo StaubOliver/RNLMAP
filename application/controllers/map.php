@@ -31,6 +31,7 @@ class map extends CI_Controller {
 			//$data['is_admin'] = $this->ProfileModel->isAdmin();
 
 			$data['genuses'] = $this->MapModel->loadGenuses();
+			$data['collectors'] = $this->MapModel->loadCollector();
 		
 			$this->load->view('map', $data);
 			

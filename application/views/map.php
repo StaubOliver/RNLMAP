@@ -491,7 +491,19 @@
 							<h6>Collector</h6>
 						</div>
 						<div class="col-md-9">
-							<h6>Select collector</h6>
+							<select class="form-control" id="fossilCollectorSelect" ng-model="$parent.entry.genus">
+								<option value="-1" selected>All Collectors</option>
+								<optgroup label="Coral genera">	
+								<?php
+									foreach($collectors as $collector){
+										//if ($genus != "" and $genus != "Not listed" and $genus != "Missing") {
+											echo "<option value='".$collector."'>".$collector."</option>";
+										//}
+									}
+
+								?>
+								</optgroup>
+							</select>
 						</div>
 					</div>
 
