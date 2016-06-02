@@ -377,21 +377,18 @@
 								</optgroup>
 						  	</select>
 						  -->
-<!--
+
 							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
 								<option value="" selected>All Genuses</option>
 								<optgroup label="Coral genera">	
-							<?php
-								foreach($data as $genus){
-									echo "<option value='".$genus."'>".$genus."</option>";
-								}
+								<?php
+									foreach($genuses as $genus){
+										echo "<option value='".$genus."'>".$genus."</option>";
+									}
 
-							?>
+								?>
 								</optgroup>
 							</select>
--->
-
-							<?php echo $genuses[0]; ?>
 						</div>
 					</div>
 
