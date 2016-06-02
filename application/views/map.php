@@ -490,7 +490,7 @@
 						<div class="col-md-3">
 							<h6>Collector</h6>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-8">
 							<select class="form-control" id="fossilCollectorSelect" ng-model="$parent.entry.genus">
 								<option value="-1" selected>All Collectors</option>
 								<optgroup label="Coral genera">	
