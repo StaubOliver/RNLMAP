@@ -99,7 +99,7 @@ class MapModel extends CI_Model {
     			$where_string .= $where[$j] . " AND ";
         	}
         	
-            $where_string = $where_string . $where[$i];
+            $where_string .= $where[$i-1]; 
         }
         else {
             $where_string = " 1";
@@ -118,7 +118,7 @@ class MapModel extends CI_Model {
     		foreach($query->result_array() as $row)
     		{
     			//we retrieve the data from each fossil from each project
-    			$query2 = $this->db->query('SELECT data_id, image_id, genus, species, age, country, place, collector FROM ' . $row["data_table"]/*.' WHERE '.$where_string*/);
+    			$query2 = $this->db->query('SELECT data_id, image_id, genus, species, age, country, place, collector FROM ' . $row["data_table"].' WHERE '.$where_string);
 
                 //return $query2->result_array(); 
     
