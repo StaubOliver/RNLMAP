@@ -66,7 +66,7 @@ class MapModel extends CI_Model {
                 //return $query2->result_array(); 
     
 				//if($query2->num_rows>0){
-			    $return[] = $query2->result_array());
+			    $return = $query2->result_array());
 				//}
     			
     		}
