@@ -391,7 +391,7 @@
 							</select>
 -->
 
-							<?php echo $genuses; ?>
+							<?php echo $genuses[0]; ?>
 						</div>
 					</div>
 
