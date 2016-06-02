@@ -125,7 +125,6 @@ class MapModel extends CI_Model {
 				//if($query2->num_rows>0){
 			    //$return[] = $query2->result_array();
 				//}
-                $i = 0; 
                 foreach ($query2->result_array() as $row)
                 {
                     if ($data['genus']!="-1"){
@@ -142,12 +141,7 @@ class MapModel extends CI_Model {
                         $row['longitude'] = $temp[1];
                     
                     */                    //return $row;
-                    $return[] = $row;  
-                    $i++;
-                    if ($i>10)
-                    {
-                        return $return;
-                    }
+                    $return[] = $row; 
                 }
     			
     		}
