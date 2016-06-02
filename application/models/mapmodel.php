@@ -55,7 +55,7 @@ class MapModel extends CI_Model {
     	//Now we look the projects_master table to give us the data_table foreach project
     	$query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
 
-    	$return = array();
+    	$return = [];
         
     	if($query->num_rows() > 0) {
     		foreach($query->result_array() as $row)
