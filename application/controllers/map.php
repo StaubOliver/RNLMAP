@@ -1,6 +1,7 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
+
 /**
-  *	Controller for the logged in user view
+  *	Controller for the map
   * 
   */
 
@@ -8,9 +9,9 @@ class App extends CI_Controller {
     function __construct() {
         parent::__construct();
         
-        $this->load->model('ProjectModel');
-        $this->load->model('ProfileModel');
-        $this->load->model('MapMpdel');
+        //$this->load->model('ProjectModel');
+        //$this->load->model('ProfileModel');
+        //$this->load->model('MapMpdel');
     }
     
 	public function index() {		
@@ -31,20 +32,13 @@ class App extends CI_Controller {
 
 			//$data['genuses'] = $this->MapMpdel->loadGenuses();
 		
-			//$this->load->view('map');
-			redirect('/');
+			$this->load->view('map');
 			
 			// Log the data
         	//$this->LoggerModel->logData();
 		//}
 	}
-	
-	public function logout() {
-		// Log the user out
-		$this->ion_auth->logout();
-		redirect('/auth/login');
-	}
 }
 
-/* End of file app.php */
-/* Location: ./application/controllers/app.php */
+/* End of file map.php */
+/* Location: ./application/controllers/map.php */
