@@ -9,9 +9,9 @@ class map extends CI_Controller {
     function __construct() {
         parent::__construct();
         
-        //$this->load->model('ProjectModel');
-        //$this->load->model('ProfileModel');
-        //$this->load->model('MapMpdel');
+        $this->load->model('ProjectModel');
+        $this->load->model('ProfileModel');
+        $this->load->model('MapMpdel');
     }
     
 	public function index() {		
