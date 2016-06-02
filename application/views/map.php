@@ -383,7 +383,7 @@
 								<optgroup label="Coral genera">	
 							<?php
 								foreach($data as $genus){
-									echo "<option value='".$genus."'>".$genus."</option>"
+									echo "<option value='".$genus."'>".$genus."</option>";
 								}
 
 							?>
