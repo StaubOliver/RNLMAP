@@ -43,12 +43,14 @@ class MapModel extends CI_Model {
     		$i += 1;
     	}
 
+        $where_string = "";
 
     	for ($j=0; $j<$i-1; $j++)
     	{
 			$where_string .= $where[$j] . " AND ";
     	}
-    	$where_string .= $where[$i];
+    	
+        $where_string .= $where[$i];
 
     	//Now we look the projects_master table to give us the data_table foreach project
     	$query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');

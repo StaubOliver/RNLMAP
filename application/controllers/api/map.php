@@ -20,7 +20,7 @@ class Map extends MY_Controller {
 		$genus = $this->uri->segment(4);
 		$species = $this->uri->segment(5);
 		$age_min = $this->uri->segment(6);
-		$age_miax = $this->uri->segment(7);
+		$age_max = $this->uri->segment(7);
 		$collector = $this->uri->segment(8);
 		$map_lat_ne = $this->uri->segment(9);
 		$map_lng_ne = $this->uri->segment(10);
@@ -31,7 +31,8 @@ class Map extends MY_Controller {
 		$data = array(
 			'genus' => $genus,
 			'species' => $species,
-			'age' => $age,
+			'age_min' => $age_min,
+			'age_max' => $age_max,
 			'collector' => $collector,
 			'map_lat_ne' => $map_lat_ne,
 			'map_lng_ne' => $map_lng_ne,
@@ -52,7 +53,7 @@ class Map extends MY_Controller {
 		$genus = $this->uri->segment(4);
 		$species = $this->uri->segment(5);
 		$age_min = $this->uri->segment(6);
-		$age_miax = $this->uri->segment(7);
+		$age_max = $this->uri->segment(7);
 		$collector = $this->uri->segment(8);
 		$map_lat_ne = $this->uri->segment(9);
 		$map_lng_ne = $this->uri->segment(10);
@@ -63,7 +64,8 @@ class Map extends MY_Controller {
 		$filter = array(
 			'genus' => $genus,
 			'species' => $species,
-			'age' => $age,
+			'age_min' => $age_min,
+			'age_max' => $age_max,
 			'collector' => $collector,
 			'map_lat_ne' => $map_lat_ne,
 			'map_lng_ne' => $map_lng_ne,
@@ -93,7 +95,7 @@ class Map extends MY_Controller {
 		$genus = $this->uri->segment(4);
 		$species = $this->uri->segment(5);
 		$age_min = $this->uri->segment(6);
-		$age_miax = $this->uri->segment(7);
+		$age_max = $this->uri->segment(7);
 		$collector = $this->uri->segment(8);
 		$map_lat_ne = $this->uri->segment(9);
 		$map_lng_ne = $this->uri->segment(10);
@@ -104,7 +106,8 @@ class Map extends MY_Controller {
 		$filter = array(
 			'genus' => $genus,
 			'species' => $species,
-			'age' => $age,
+			'age_min' => $age_min,
+			'age_max' => $age_max,
 			'collector' => $collector,
 			'map_lat_ne' => $map_lat_ne,
 			'map_lng_ne' => $map_lng_ne,
