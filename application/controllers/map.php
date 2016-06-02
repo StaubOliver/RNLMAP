@@ -4,7 +4,7 @@
   * 
   */
 
-class App extends MY_Controller {
+class App extends CI_Controller {
     function __construct() {
         parent::__construct();
         
