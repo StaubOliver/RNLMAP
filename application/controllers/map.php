@@ -31,7 +31,8 @@ class App extends CI_Controller {
 
 			//$data['genuses'] = $this->MapMpdel->loadGenuses();
 		
-			$this->load->view('map');
+			//$this->load->view('map');
+			redirect('/');
 			
 			// Log the data
         	//$this->LoggerModel->logData();
