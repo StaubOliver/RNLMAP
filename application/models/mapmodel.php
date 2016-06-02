@@ -125,8 +125,8 @@ class MapModel extends CI_Model {
                         $row['lattitude'] = $temp[0];
                         $row['longitude'] = $temp[1];
                     }
-                    return $row;
-                    //$return[] = $row;  
+                    //return $row;
+                    $return[] = $row;  
 
                 }
     			
