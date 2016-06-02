@@ -118,8 +118,8 @@ class MapModel extends CI_Model {
 
                 foreach ($query2->result_array() as $row)
                 {
-                    $row['lat'] = "12";
-                    return $row;
+                    $temp = geocode($row['country'].' '.$row[place]);
+                    return $temp;
 
                 }
     			
