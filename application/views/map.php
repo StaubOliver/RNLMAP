@@ -379,10 +379,11 @@
 						  -->
 
 							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
-								<option value="" selected>All Genuses</option>
+								<option value="-1" selected>All Genuses</option>
 								<optgroup label="Coral genera">	
 								<?php
 									foreach($genuses as $genus){
+										if ($genus != "" || $genus != "Not listed" || $genus != "Missing")
 										echo "<option value='".$genus."'>".$genus."</option>";
 									}
 
