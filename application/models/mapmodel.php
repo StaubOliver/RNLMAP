@@ -127,30 +127,20 @@ class MapModel extends CI_Model {
 				//}
                 foreach ($query2->result_array() as $row)
                 {
-                    if ($data['genus']!="-1"){
-                        if ($row['genus']==$data['genus']){
-
-                        }
-                    }
-
-
                     /*$temp = $this->geocode($row['country'].' '.$row['place']);
                     
                     if ($temp != false) {
                         $row['lattitude'] = $temp[0];
                         $row['longitude'] = $temp[1];
                     
-                    */                    //return $row;
+                    */                    
+                    //return $row;
                     $return[] = $row; 
-                }
-    			
+                }		
     		}
             //return the data
             return $return;
     	}
-        
-        
-
     }
 
 
@@ -218,16 +208,16 @@ class MapModel extends CI_Model {
 
         $query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
 
-        $return = [];
+        $return = array();
 
         if($query->num_rows() >0) {
             foreach($query->result_array() as $row)
             {
                 //we retrieve the data from each fossil from each project
-                $query2=$this->db->query('SELECT disctinct data_id, image_id, genus, species, age, country, place, collector FROM '.$row['data_table'].' WHERE '.$where_string);
+                $query2=$this->db->query('SELECT disctinct  genus FROM '.$row['data_table']);
 
-                if($query2->num_rows>0){
-                    array_merge($return, $query2->result_array());
+                foreach($query2->result_array() as $row){
+                    $return[] = $row['genus'];
                 }
                 
             }
