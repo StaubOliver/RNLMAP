@@ -118,7 +118,7 @@ class MapModel extends CI_Model {
 
                 foreach ($query2->result_array() as $row)
                 {
-                    $temp = $this->geocode($row['country'].' '.$row[place]);
+                    $temp = $this->geocode($row['country'].' '.$row['place']);
                     return $temp;
 
                 }
