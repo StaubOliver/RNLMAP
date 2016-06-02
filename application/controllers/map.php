@@ -35,7 +35,7 @@ class App extends MY_Controller {
 			
 			// Log the data
         	//$this->LoggerModel->logData();
-		}
+		//}
 	}
 	
 	public function logout() {
