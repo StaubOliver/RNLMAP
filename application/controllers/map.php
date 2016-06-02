@@ -30,6 +30,7 @@ class map extends CI_Controller {
 			//$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
 			//$data['is_admin'] = $this->ProfileModel->isAdmin();
 
+			$data['projects'] = $this->MapModel->loadProject();
 			$data['genuses'] = $this->MapModel->loadGenuses();
 			$data['collectors'] = $this->MapModel->loadCollector();
 		

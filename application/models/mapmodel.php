@@ -249,6 +249,22 @@ class MapModel extends CI_Model {
         }
     }
 
+    function loadProject() {
+        $query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
+
+        $return = array();
+
+        if($query->num_rows() >0) {
+            foreach($query->result_array() as $row)
+            {
+                $return[] = $row['name'];
+            }
+
+            //return the data
+            return $return;
+        }
+    }
+
     /*function submitFeedback($data, $filter){
     	//the data contains the time, message and user id information.
     	//we need to find the filter associated with it. 

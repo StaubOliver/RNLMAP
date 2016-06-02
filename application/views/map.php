@@ -254,8 +254,20 @@
 						<div class="col-md-3">
 							<h6>Projects</h6>
 						</div>
-						<div class="col-md-9">
-							<h6>Select a project</h6>
+						<div class="col-md-8">
+							<select class="form-control" id="fossilProjectSelect" ng-model="$parent.entry.genus">
+								<option value="-1" selected>All Projects</option>
+								<optgroup label="Available projects">	
+								<?php
+									foreach($projects as $p){
+										//if ($genus != "" and $genus != "Not listed" and $genus != "Missing") {
+											echo "<option value='".$p."'>".$p."</option>";
+										//}
+									}
+
+								?>
+								</optgroup>
+							</select>
 						</div>
 					</div>
 
@@ -493,7 +505,7 @@
 						<div class="col-md-8">
 							<select class="form-control" id="fossilCollectorSelect" ng-model="$parent.entry.genus">
 								<option value="-1" selected>All Collectors</option>
-								<optgroup label="Coral genera">	
+								<optgroup label="Collectors">	
 								<?php
 									foreach($collectors as $collector){
 										//if ($genus != "" and $genus != "Not listed" and $genus != "Missing") {
