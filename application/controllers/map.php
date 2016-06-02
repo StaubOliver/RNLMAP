@@ -11,7 +11,7 @@ class map extends CI_Controller {
         
         $this->load->model('ProjectModel');
         $this->load->model('ProfileModel');
-        $this->load->model('MapMpdel');
+        $this->load->model('MapModel');
     }
     
 	public function index() {		
@@ -30,7 +30,7 @@ class map extends CI_Controller {
 			//$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
 			//$data['is_admin'] = $this->ProfileModel->isAdmin();
 
-			$data['genuses'] = $this->MapMpdel->loadGenuses();
+			$data['genuses'] = $this->MapModel->loadGenuses();
 		
 			$this->load->view('map', $data);
 			
