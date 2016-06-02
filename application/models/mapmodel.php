@@ -73,7 +73,7 @@ class MapModel extends CI_Model {
     	$i = 0;
     	
     	if ($data['genus'] != "-1"){
-    		$where[$i] = "genus = " . $data['genus'];
+    		$where[$i] = "genus = '" . $data['genus']."'";
 			$i += 1;
     	}
 
@@ -86,7 +86,7 @@ class MapModel extends CI_Model {
 */      
 
     	if ($data['collector'] != "-1"){
-    		$where[$i] = "colletor = " . $data['collector'];
+    		$where[$i] = "colletor = '" . $data['collector']."'";
     		$i += 1;
     	}
 
