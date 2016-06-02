@@ -61,8 +61,8 @@ class MapModel extends CI_Model {
     		foreach($query->result_array() as $row)
     		{
     			//we retrieve the data from each fossil from each project
-    			$query2 = $this->db->query('SELECT data_id, image_id, genus, species, age, country, place, collector FROM project_1_data'/*.' WHERE '.$where_string*/);
-                return $query2->result_array();
+    			$query2 = $this->db->query('SELECT data_id, image_id, genus, species, age, country, place, collector FROM '.$row["data_table"]/*.' WHERE '.$where_string*/);
+                return $query2->result_array(); 
     /*
 				if($query2->num_rows>0){
 					array_merge($return, $query2->result_array());
