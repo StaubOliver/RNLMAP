@@ -112,7 +112,7 @@ class MapModel extends CI_Model {
             $query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
         }
 
-    	$return = [];
+    	$return = array();
         
     	if($query->num_rows() > 0) {
     		foreach($query->result_array() as $row)
