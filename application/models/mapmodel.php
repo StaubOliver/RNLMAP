@@ -156,14 +156,14 @@ class MapModel extends CI_Model {
             return $return;
     }
 
-    function submitFeedback($data, $filter){
+    /*function submitFeedback($data, $filter){
     	//the data contains the time, message and user id information.
     	//we need to find the filter associated with it. 
     	//if such a filter does not exist we need to create it
 
 
 
-    }
+    }*/
 
 
 }
