@@ -25,7 +25,7 @@ class Map extends MY_Controller {
 		$map_lat_ne = $this->uri->segment(9);
 		$map_lng_ne = $this->uri->segment(10);
 		$map_lat_sw = $this->uri->segment(11);
-		$map_lng_sw = $this->uri-segment(12);
+		$map_lng_sw = $this->uri->segment(12);
 		$map_zoom = $this->uri->segment(13);
 
 		$data = array(
@@ -57,7 +57,7 @@ class Map extends MY_Controller {
 		$map_lat_ne = $this->uri->segment(9);
 		$map_lng_ne = $this->uri->segment(10);
 		$map_lat_sw = $this->uri->segment(11);
-		$map_lng_sw = $this->uri-segment(12);
+		$map_lng_sw = $this->uri->segment(12);
 		$map_zoom = $this->uri->segment(13);
 
 		$filter = array(
@@ -98,7 +98,7 @@ class Map extends MY_Controller {
 		$map_lat_ne = $this->uri->segment(9);
 		$map_lng_ne = $this->uri->segment(10);
 		$map_lat_sw = $this->uri->segment(11);
-		$map_lng_sw = $this->uri-segment(12);
+		$map_lng_sw = $this->uri->segment(12);
 		$map_zoom = $this->uri->segment(13);
 
 		$filter = array(
