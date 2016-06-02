@@ -31,11 +31,12 @@ class MapModel extends CI_Model {
     		$i += 1;
     	}
 
-    	if ($data['age'] != "-1"){
-    		$where[$i] = "age = " . $data['age'];
-    		$i += 1;
-    	}
+    	$where[$i] = "age_min = " . $data['age_min'];
+        $i += 1;
 
+        $where[$i] = "age_max = " . $data['age_max'];
+        $i += 1;
+        
     	if ($data['collector'] != "-1"){
     		$where[$i] = "colletor = " . $data['collector'];
     		$i += 1;
@@ -88,10 +89,12 @@ class MapModel extends CI_Model {
     		$i += 1;
     	}
 
-    	if ($data['age'] != "-1"){
-    		$where[$i] = "age = " . $data['age'];
-    		$i += 1;
-    	}
+		$where[$i] = "age_min = " . $data['age_min'];
+		$i += 1;
+
+        $where[$i] = "age_max = " . $data['age_max'];
+        $i += 1;
+        
 
     	if ($data['collector'] != "-1"){
     		$where[$i] = "colletor = " . $data['collector'];
@@ -131,6 +134,27 @@ class MapModel extends CI_Model {
     	}
     }
 
+    function loadGenuses(){
+
+        $query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
+
+        $return = [];
+
+        if($query->num_rows() >0) {
+            foreach($query->result_array() as $row)
+            {
+                //we retrieve the data from each fossil from each project
+                $query2=this->db->query('SELECT disctinct data_id, image_id, genus, species, age, country, place, collector FROM '.$row['data_table'].' WHERE '.$where_string);
+
+                if($query2->num_rows>0){
+                    array_merge($return, $query2->result_array());
+                }
+                
+            }
+
+            //return the data
+            return $return;
+    }
 
     function submitFeedback($data, $filter){
     	//the data contains the time, message and user id information.

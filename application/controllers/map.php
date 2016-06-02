@@ -11,14 +11,13 @@ class App extends MY_Controller {
         $this->load->model('ProjectModel');
         $this->load->model('ProfileModel');
         $this->load->model('MapMpdel');
-        //$this->load->model('LoggerModel');
     }
     
 	public function index() {		
 		// Check if logged in
 		if(!$this->ion_auth->logged_in()) {
 			// Not logged in, show the home page
-			$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
+			//$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
 			$this->load->view('home', $data);
 			
 			// Log the data
@@ -27,8 +26,10 @@ class App extends MY_Controller {
 			// Logged in show the app (Angular application)
 			$data['user_id'] = $this->ion_auth->get_user_id();
 			$data['projects'] = $this->ProjectModel->listProjects();
-			$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
+			//$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
 			$data['is_admin'] = $this->ProfileModel->isAdmin();
+
+			$data['genuses'] = $this->MapMpdel->loadFossils()
 		
 			$this->load->view('map', $data);
 			

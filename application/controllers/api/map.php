@@ -19,13 +19,14 @@ class Map extends MY_Controller {
 	public function loadfossils(){
 		$genus = $this->uri->segment(4);
 		$species = $this->uri->segment(5);
-		$age = $this->uri->segment(6);
-		$collector = $this->uri->segment(7);
-		$map_lat_ne = $this->uri->segment(8);
-		$map_lng_ne = $this->uri->segment(9);
-		$map_lat_sw = $this->uri->segment(10);
-		$map_lng_sw = $this->uri-segment(11);
-		$map_zoom = $this->uri->segment(12);
+		$age_min = $this->uri->segment(6);
+		$age_miax = $this->uri->segment(7);
+		$collector = $this->uri->segment(8);
+		$map_lat_ne = $this->uri->segment(9);
+		$map_lng_ne = $this->uri->segment(10);
+		$map_lat_sw = $this->uri->segment(11);
+		$map_lng_sw = $this->uri-segment(12);
+		$map_zoom = $this->uri->segment(13);
 
 		$data = array(
 			'genus' => $genus,
@@ -50,13 +51,14 @@ class Map extends MY_Controller {
 
 		$genus = $this->uri->segment(4);
 		$species = $this->uri->segment(5);
-		$age = $this->uri->segment(6);
-		$collector = $this->uri->segment(7);
-		$map_lat_ne = $this->uri->segment(8);
-		$map_lng_ne = $this->uri->segment(9);
-		$map_lat_sw = $this->uri->segment(10);
-		$map_lng_sw = $this->uri-segment(11);
-		$map_zoom = $this->uri->segment(12);
+		$age_min = $this->uri->segment(6);
+		$age_miax = $this->uri->segment(7);
+		$collector = $this->uri->segment(8);
+		$map_lat_ne = $this->uri->segment(9);
+		$map_lng_ne = $this->uri->segment(10);
+		$map_lat_sw = $this->uri->segment(11);
+		$map_lng_sw = $this->uri-segment(12);
+		$map_zoom = $this->uri->segment(13);
 
 		$filter = array(
 			'genus' => $genus,
@@ -90,13 +92,14 @@ class Map extends MY_Controller {
 
 		$genus = $this->uri->segment(4);
 		$species = $this->uri->segment(5);
-		$age = $this->uri->segment(6);
-		$collector = $this->uri->segment(7);
-		$map_lat_ne = $this->uri->segment(8);
-		$map_lng_ne = $this->uri->segment(9);
-		$map_lat_sw = $this->uri->segment(10);
-		$map_lng_sw = $this->uri-segment(11);
-		$map_zoom = $this->uri->segment(12);
+		$age_min = $this->uri->segment(6);
+		$age_miax = $this->uri->segment(7);
+		$collector = $this->uri->segment(8);
+		$map_lat_ne = $this->uri->segment(9);
+		$map_lng_ne = $this->uri->segment(10);
+		$map_lat_sw = $this->uri->segment(11);
+		$map_lng_sw = $this->uri-segment(12);
+		$map_zoom = $this->uri->segment(13);
 
 		$filter = array(
 			'genus' => $genus,
