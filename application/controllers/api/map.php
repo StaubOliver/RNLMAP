@@ -152,7 +152,7 @@ class Map extends MY_Controller {
 
 		$data = array(
 			'user_id' => $user_id,
-			'time', => $time,
+			'time' => $time,
 			'activity' => $activity
 		);
 
