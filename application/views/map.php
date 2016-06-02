@@ -377,7 +377,7 @@
 								</optgroup>
 						  	</select>
 						  -->
-
+<!--
 							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
 								<option value="" selected>All Genuses</option>
 								<optgroup label="Coral genera">	
@@ -389,7 +389,9 @@
 							?>
 								</optgroup>
 							</select>
+-->
 
+							<?php echo $data; ?>
 						</div>
 					</div>
 
