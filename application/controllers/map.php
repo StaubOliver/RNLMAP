@@ -29,7 +29,7 @@ class App extends MY_Controller {
 			//$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
 			$data['is_admin'] = $this->ProfileModel->isAdmin();
 
-			$data['genuses'] = $this->MapMpdel->loadFossils()
+			$data['genuses'] = $this->MapMpdel->loadGenuses()
 		
 			$this->load->view('map', $data);
 			
