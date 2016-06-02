@@ -18,7 +18,7 @@ class App extends MY_Controller {
 		if(!$this->ion_auth->logged_in()) {
 			// Not logged in, show the home page
 			$data['analytics'] = $this->load->view('analytics', NULL, TRUE);
-			$this->load->view('map', $data);
+			$this->load->view('home', $data);
 			
 			// Log the data
         	//$this->LoggerModel->logData();
