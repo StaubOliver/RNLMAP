@@ -68,7 +68,7 @@ class MapModel extends CI_Model {
 					array_merge($return, $query2->result_array());
 				}
                 */
-                return $row;
+                return $row["data_table"];
     			
     		}
     	}
