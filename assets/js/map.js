@@ -35,9 +35,6 @@ function createMarkers(info){
 	markers.push(marker);
 }
 
-function addMarkers(){
-
-}
 
 
 
@@ -63,9 +60,8 @@ var map = angular.module('map', [])
 			info['title'] = item['genus'];
 			createMarkers(info);	
 		});
-	}
-	
-});
+	});
+}
 
 map.controller('filterSection', function($scope, $http){
 
