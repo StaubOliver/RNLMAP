@@ -79,7 +79,9 @@ var map = angular.module('map', [])
 		});
 	}
 
-	refresh();
+	refresh().then(function res(){
+		$scope.loading = false;
+	});
 });
 
 map.controller('filterSection', function($scope, $http){
