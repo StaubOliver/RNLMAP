@@ -20,7 +20,7 @@ function clearMarkers() {
   setMapOnAll(null);
 }
 
-var deleteMarkers = function() {
+function deleteMarkers() {
   clearMarkers();
   markers = [];
 }
