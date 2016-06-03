@@ -58,10 +58,15 @@ var map = angular.module('map', [])
 });
 
 map.controller('filterSection', function($scope){
-	$scope.selectedGenus = "-1";	
+	
+	$scope.selectedProject = "-1";	
+	$scope.selectedGenus = "-1";
+	$scope.selectedAgeMin = "Quaternary";
+	$scope.selectedAgeMax = "Precambrian";
+	$scope.selectedCollector = "-1";
 
 	$scope.newGenus = function(){
-		alert($scope.selectedGenus);
+		refresh();
 	}
 
 });
