@@ -40,14 +40,16 @@ function createMarkers(info){
 
 var map = angular.module('map', [])
 .controller('GoogleMap', function($scope, $http){
+	
 	$scope.loading = true;
+
 	var mapProp = {
-		    center:new google.maps.LatLng(51.508742,-0.120850),
-		    zoom:3,
-		    mapTypeId:google.maps.MapTypeId.ROADMAP,
-		    mapTypeControl:false,
-		    streetViewControl:false
-		  };
+	    center:new google.maps.LatLng(51.508742,-0.120850),
+	    zoom:3,
+	    mapTypeId:google.maps.MapTypeId.ROADMAP,
+	    mapTypeControl:false,
+	    streetViewControl:false
+	};
 
 	actualmap = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 /*
