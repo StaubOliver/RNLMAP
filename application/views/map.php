@@ -145,7 +145,7 @@
 							<h6>Genus</h6>
 						</div>
 						<div class="col-md-8">
-							<select class="form-control" id="fossilGenusSelect" ng-model="filter.genus" ng-change="newGenus">
+							<select class="form-control" id="fossilGenusSelect" ng-model="selectedGenus" ng-change="newGenus()">
 								<option value="-1" selected>All Genuses</option>
 								<optgroup label="Coral genera">	
 								<?php

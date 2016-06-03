@@ -59,8 +59,8 @@ var map = angular.module('map', [])
 
 map.controller('filterSection', function($scope){
 
-$scope.$newGenus = function(item){
-	console.log(item);
+$scope.$newGenus = function(){
+	console.log($selectedGenus);
 }
 
 });
