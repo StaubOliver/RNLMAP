@@ -62,7 +62,7 @@ $scope.selectedGenus = "-1";
 
 
 $scope.$newGenus = function(){
-	alert('genus is : '+$scope.selectedGenus);
+	deleteMarkers();
 }
 
 });
