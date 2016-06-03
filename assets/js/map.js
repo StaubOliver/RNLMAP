@@ -1,3 +1,24 @@
+var actualmap;
+var markers = [];
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+function deleteMarkers() {
+  clearMarkers();
+  markers = [];
+}
+
+
 var map = angular.module('map', [])
 .controller('GoogleMap', function($scope, $http){
 
@@ -9,13 +30,11 @@ var map = angular.module('map', [])
 		    streetViewControl:false
 		  };
 
-	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-	var markers = [];
+	actualmap = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 	var createMarkers = function(info){
 		var marker = new google.maps.Marker({
-			map: map,
+			map: actualmap,
 			position: new google.maps.LatLng(info['lat'], info['lng']),
 			title: info['title']
 		});
@@ -33,11 +52,6 @@ var map = angular.module('map', [])
 			createMarkers(info);	
 	
 		});
-
-
 	});
-
-	console.log(markers);
-
 
 });
