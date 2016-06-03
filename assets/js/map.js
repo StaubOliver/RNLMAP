@@ -80,7 +80,6 @@ var map = angular.module('map', [])
 	}
 
 	refresh();
-	$scope.loading = false;
 });
 
 map.controller('filterSection', function($scope, $http){
