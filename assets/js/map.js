@@ -20,7 +20,7 @@ function clearMarkers() {
   setMapOnAll(null);
 }
 
-function deleteMarkers() {
+var deleteMarkers = function() {
   clearMarkers();
   markers = [];
 }
@@ -87,7 +87,7 @@ map.controller('filterSection', function($scope, $http){
 	*/
 
 	var refresh = function(){
-		deleteMarkers;
+		markers = [];
 		//retrieve the fossils and put them as marker in the map
 		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 			data.forEach(function(item, index){
