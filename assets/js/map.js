@@ -74,11 +74,12 @@ var map = angular.module('map', [])
 				info['lng'] = item['longitude'];
 				info['title'] = item['genus'];
 				
-				info['content'] = "";
+				/*info['content'] = "";
 				google.maps.event.addListener(marker, 'click', function(){
 					infoWindow.setContent('<h2>'+info['title']+'</h2>');
 					infoWindow.open($scope.actualmap, marker);
 				});
+*/
 
 				createMarkers(info);	
 				console.log(info);
