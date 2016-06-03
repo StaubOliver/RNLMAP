@@ -167,7 +167,7 @@
 							<h6>Geological Age</h6>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control" id="fossilAge-min" >
+							<select class="form-control" id="fossilAge-min" ng-model="selectedAgeMin">
 						  		<optgroup label="Geological ages">
 									<option value="Quaternary" selected>Quaternary</option>
 									<option value="Pliocene">Pliocene</option>
@@ -209,7 +209,7 @@
 						  	</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control" id="fossilAge-max" ng-model="$parent.entry.age">
+							<select class="form-control" id="fossilAge-max" ng-model="selectedAgeMax">
 						  		<optgroup label="Geological ages">
 									<option value="Quaternary">Quaternary</option>
 									<option value="Pliocene">Pliocene</option>
