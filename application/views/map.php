@@ -159,7 +159,6 @@
 								</optgroup>
 							</select>
 						</div>
-						<p>selected genus : {{selectedGenus}}</p>
 					</div>
 
 					<!-- Geological Age --> 
