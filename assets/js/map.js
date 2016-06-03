@@ -20,7 +20,7 @@ var map = angular.module('map', [])
 			title: info.title
 		});
 
-		$scope.markers.push(marker);
+		markers.push(marker);
 	}
 
 	//retrieve the fossils and put them as marker in the map
@@ -30,7 +30,7 @@ var map = angular.module('map', [])
 			info['lat'] = item['lattitude'];
 			info['lng'] = item['longitude'];
 			info['title'] = item['genus'];
-			createMarkers(info);
+			createMarkers(info);	
 	
 		});
 
