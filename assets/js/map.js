@@ -40,7 +40,7 @@ function createMarkers(info){
 
 var map = angular.module('map', [])
 .controller('GoogleMap', function($scope, $http){
-
+	$scope.loading = true;
 	var mapProp = {
 		    center:new google.maps.LatLng(51.508742,-0.120850),
 		    zoom:3,
@@ -78,6 +78,7 @@ var map = angular.module('map', [])
 	}
 
 	refresh();
+	$scope.loading = false;
 });
 
 map.controller('filterSection', function($scope, $http){
