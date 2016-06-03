@@ -16,8 +16,8 @@ var map = angular.module('map', [])
 	var createMarkers = function(info){
 		var marker = new google.maps.Marker({
 			map: $scope.map,
-			position: new google.maps.LatLng(info.lat, info.lng),
-			title: info.title
+			position: new google.maps.LatLng(info['lat'], info['lng']),
+			title: info['title']
 		});
 
 		markers.push(marker);
