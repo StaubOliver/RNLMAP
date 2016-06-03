@@ -20,7 +20,28 @@ function deleteMarkers() {
   markers = [];
 }
 
+function createMarkers(info){
+	var marker = new google.maps.Marker({
+		map: actualmap,
+		position: new google.maps.LatLng(info['lat'], info['lng']),
+		title: info['title']
+	});
+
+	markers.push(marker);
+}
+
+function addMarkers(){
+	
+}
+
 var filter = [];
+
+
+
+function refresh() {
+	deleteMarkers;
+
+}
 
 
 var map = angular.module('map', [])
@@ -36,15 +57,7 @@ var map = angular.module('map', [])
 
 	actualmap = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-	var createMarkers = function(info){
-		var marker = new google.maps.Marker({
-			map: actualmap,
-			position: new google.maps.LatLng(info['lat'], info['lng']),
-			title: info['title']
-		});
-
-		markers.push(marker);
-	}
+	
 
 	//retrieve the fossils and put them as marker in the map
 	$http.get('/api/map/loadfossils/-1/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
@@ -61,7 +74,7 @@ var map = angular.module('map', [])
 });
 
 map.controller('filterSection', function($scope){
-	
+
 	filter['project'] = "-1";
 	filter['genus'] = "-1";
 	filter['ageMin'] = "Quaternary";
