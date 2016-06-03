@@ -24,14 +24,10 @@ var map = angular.module('map', [])
 	}
 
 	//retrieve the fossils and put them as marker in the map
-	$http.get('/api/map/loadfossils/-1/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){}).forEach(function(item, index){
+	$http.get('/api/map/loadfossils/-1/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
+		console.log(data);
 
-		var info = [];
-		info['lat'] = item['lattitude'];
-		info['lng'] = item['longitude'];
-		info['title'] = item['genus'];
-
-	})
+	});
 
 
 });
