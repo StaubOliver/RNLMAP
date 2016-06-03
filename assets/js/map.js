@@ -1,12 +1,12 @@
 var actualmap;
 var markers = [];
-
+/*
 var filter = [];
 filter['project'] = "-1";
 filter['genus'] = "-1";
 filter['ageMin'] = "Quaternary";
 filter['ageMax'] = 'Precambrian';
-filter['collector'] = '-1';
+filter['collector'] = '-1';*/
 
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
