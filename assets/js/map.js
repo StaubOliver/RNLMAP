@@ -62,7 +62,8 @@ var map = angular.module('map', [])
 			info['lng'] = item['longitude'];
 			info['title'] = item['genus'];
 			createMarkers(info);	
-	});
+		});
+	}
 	
 });
 
