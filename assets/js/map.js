@@ -73,6 +73,13 @@ var map = angular.module('map', [])
 				info['lat'] = item['lattitude'];
 				info['lng'] = item['longitude'];
 				info['title'] = item['genus'];
+				
+				info['content'] = "";
+				google.maps.event.addListener(marker, 'click', function(){
+					infoWindow.setContent('<h2>'+info['title']+'</h2>');
+					infoWindow.open($scope.actualmap, marker);
+				});
+
 				createMarkers(info);	
 				console.log(info);
 			});
@@ -113,8 +120,28 @@ map.controller('filterSection', function($scope, $http){
 		});
 	}
 
+	$scope.newProject = function (){
+		filter['project'] = $scope.selectedProject;
+		refresh();
+	}
+
 	$scope.newGenus = function(){
 		filter['genus'] = $scope.selectedGenus;
+		refresh();
+	}
+
+	$scope.newAgeMin = function(){
+		filter['ageMin'] = $scope.selectedAgeMin;
+		refresh();
+	}
+
+	$scope.newAgeMax = function(){
+		filter['ageMax'] = $scope.selectedAgeMax;
+		refresh();
+	}
+
+	$scope.newCollector = function(){
+		filter['collector'] = $scope.selectedCollector;
 		refresh();
 	}
 
