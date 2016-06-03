@@ -1,7 +1,7 @@
 var actualmap;
 var markers = [];
 
-var filter = []:
+var filter = [];
 filter['project'] = "-1";
 filter['genus'] = "-1";
 filter['ageMin'] = "Quaternary";
