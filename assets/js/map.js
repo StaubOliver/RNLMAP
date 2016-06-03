@@ -8,7 +8,6 @@ function setMapOnAll(map) {
   }
 }
 
-
 function clearMarkers() {
   setMapOnAll(null);
 }
@@ -17,6 +16,8 @@ function deleteMarkers() {
   clearMarkers();
   markers = [];
 }
+
+var filter = [];
 
 
 var map = angular.module('map', [])
@@ -53,5 +54,13 @@ var map = angular.module('map', [])
 	
 		});
 	});
+
+});
+
+map.controller('filterSection', function($scope){
+
+$scope.$newGenus = function(item){
+	console.log(item);
+}
 
 });

@@ -98,8 +98,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<!-- Filter -->
-			<div class="col-md-6">
-				<div class="filter-section">
+			<div class="col-md-6" ng-controller='filterSection'>
+				<div class="filter-section" ng-controller='filter'>
 			
 					<div class="row">
 						<div class="col-md-12 filter-title">
@@ -113,7 +113,7 @@
 							<h6>Projects</h6>
 						</div>
 						<div class="col-md-8">
-							<select class="form-control" id="fossilProjectSelect" ng-model="$parent.entry.genus">
+							<select class="form-control" id="fossilProjectSelect" ng-model="filter.project">
 								<option value="-1" selected>All Projects</option>
 								<optgroup label="Available projects">	
 								<?php
@@ -122,7 +122,6 @@
 											echo "<option value='".$p."'>".$p."</option>";
 										//}
 									}
-
 								?>
 								</optgroup>
 							</select>
@@ -140,14 +139,13 @@
 						</div>
 					</div>
 					-->
-
 					<!-- Genus --> 
 					<div class="row filter-element">
 						<div class="col-md-3">
 							<h6>Genus</h6>
 						</div>
 						<div class="col-md-8">
-							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
+							<select class="form-control" id="fossilGenusSelect" ng-model="filter.genus" ng-change="newGenus">
 								<option value="-1" selected>All Genuses</option>
 								<optgroup label="Coral genera">	
 								<?php
