@@ -55,7 +55,6 @@ var map = angular.module('map', [])
 	actualmap = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 	//retrieve the fossils and put them as marker in the map
-
 	$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 		data.forEach(function(item, index){
 			var info = [];
@@ -63,8 +62,6 @@ var map = angular.module('map', [])
 			info['lng'] = item['longitude'];
 			info['title'] = item['genus'];
 			createMarkers(info);	
-			console.log(info);
-		});
 	});
 	
 });
@@ -86,7 +83,8 @@ map.controller('filterSection', function($scope, $http){
 	*/
 
 	var refresh = function(){
-		markers = [];
+		deleteMarkers();
+		/*markers = [];
 		//retrieve the fossils and put them as marker in the map
 		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 			data.forEach(function(item, index){
@@ -97,7 +95,7 @@ map.controller('filterSection', function($scope, $http){
 				createMarkers(info);	
 				console.log(info);
 			});
-		});
+		});*/
 	}
 
 	$scope.newGenus = function(){
