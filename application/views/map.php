@@ -72,7 +72,7 @@
 
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><p class="navbar-text">Hello xxxxx</p></li>
+					<li><p class="navbar-text">Hello Stranger</p></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><p class="navbar-text">Profil</p></li>
@@ -148,109 +148,6 @@
 							<h6>Genus</h6>
 						</div>
 						<div class="col-md-8">
-							<!-- 
-							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
-						  		<option value="" selected>All Genuses</option>
-								<optgroup label="Coral genera">	
-									<option value="Acaciapora">Acaciapora</option>
-									<option value="Acervularia">Acervularia</option>
-									<option value="Actinopora">Actinopora</option>
-									<option value="Alveolites">Alveolites</option>
-									<option value="Alveopora">Alveopora</option>
-									<option value="Amplexizaphrentis">Amplexizaphrentis</option>
-									<option value="Amplexizaphrentis">Amplexus</option>
-									<option value="Anabacia">Anabacia</option>
-									<option value="Aspidiscus">Aspidiscus</option>
-									<option value="Asteropora">Asteropora</option>
-									<option value="Astrhelia">Astrhelia</option>
-									<option value="Aulacophyllum">Aulacophyllum</option>
-									<option value="Aulina">Aulina</option>
-									<option value="Aulophyllum">Aulophyllum</option>
-									<option value="Aulopora">Aulopora</option>
-									<option value="Axogaster">Axogaster</option>
-									<option value="Axophyllum">Axophyllum</option>
-									<option value="Axopora">Axopora</option>
-									<option value="Balanophylla">Balanophylla</option>
-									<option value="Battersbyia">Battersbyia</option>
-									<option value="Calamophyllia">Calamophyllia</option>
-									<option value="Calceola">Calceola</option>
-									<option value="Campophyllum">Campophyllum</option>
-									<option value="Caninia">Caninia</option>
-									<option value="Caryophyllia">Caryophyllia</option>
-									<option value="Caulastrea">Caulastrea</option>
-									<option value="Chonophyllum">Chonophyllum</option>
-									<option value="Cladochonus">Cladochonus</option>
-									<option value="Cladochonus">Cladochonus</option>
-									<option value="Coenites">Coenites </option>
-									<option value="Columnopora">Columnopora</option>
-									<option value="Conularia">Conularia </option>
-									<option value="Convexastraea">Convexastraea</option>
-									<option value="Cosmoseris">Cosmoseris</option>
-									<option value="Cryptangia">Cryptangia</option>
-									<option value="Cyathophyllum">Cyathophyllum</option>
-									<option value="Dendracis">Dendracis</option>
-									<option value="Dibunophyllum">Dibunophyllum</option>
-									<option value="Dictyoraea">Dictyoraea</option>
-									<option value="Diphyphyllum">Diphyphyllum</option>
-									<option value="Disphyllum">Disphyllum</option>
-									<option value="Emmonsia">Emmonsia</option>
-									<option value="Endophyllum">Endophyllum</option>
-									<option value="Favia">Favia</option>
-									<option value="Favosites">Favosites</option>
-									<option value="Flabellum">Flabellum</option>
-									<option value="Gonipora">Gonipora</option>
-									<option value="Grewingkia">Grewingkia</option>
-									<option value="Hadrophyllum">Hadrophyllum</option>
-									<option value="Halisites">Halisites</option>
-									<option value="Heliolites">Heliolites</option>
-									<option value="Heliophyllum">Heliophyllum</option>
-									<option value="Hexaphyllia">Hexaphyllia</option>
-									<option value="Hydractinia">Hydractinia</option>
-									<option value="Isastrea">Isastrea</option>
-									<option value="Ketophyllum">Ketophyllum</option>
-									<option value="Kodonophyllum">Kodonophyllum</option>
-									<option value="Laotira">Laotira</option>
-									<option value="Lindstroemia">Lindstroemia</option>
-									<option value="Lithostrotion">Lithostrotion </option>
-									<option value="Lonsdaleia">Lonsdaleia</option>
-									<option value="Lophophyllum">Lophophyllum</option>
-									<option value="Metriophyllum">Metriophyllum</option>
-									<option value="Michelinia">Michelinia</option>
-									<option value="Micrabacia">Micrabacia</option>
-									<option value="Monastrea">Monastrea</option>
-									<option value="Montlivaltia">Montlivaltia</option>
-									<option value="Nemistrum">Nemistrum</option>
-									<option value="Nemistrum">Nemistrum</option>
-									<option value="Palaeosmilia">Palaeosmilia </option>
-									<option value="Palastrea">Palastrea</option>
-									<option value="Paleocyclus">Paleocyclus</option>
-									<option value="Parasmilia">Parasmilia</option>
-									<option value="Parastriapora">Parastriapora</option>
-									<option value="Petraia">Petraia</option>
-									<option value="Phillipsastrea">Phillipsastrea</option>
-									<option value="Plasmopora">Plasmopora</option>
-									<option value="Protaraea">Protaraea</option>
-									<option value="Romingeria">Romingeria</option>
-									<option value="Siphonodendron">Siphonodendron</option>
-									<option value="Siphonophyllia">Siphonophyllia</option>
-									<option value="Stauria">Stauria</option>
-									<option value="Strombodes">Strombodes</option>
-									<option value="Stylophora">Stylophora</option>
-									<option value="Syringaxon">Syringaxon</option>
-									<option value="Syringopora">Syringopora</option>
-									<option value="Thamnastrea">Thamnastrea</option>
-									<option value="Thecia">Thecia</option>
-									<option value="Theocosmilia">Theocosmilia</option>
-									<option value="Trachocyathus">Trachocyathus</option>
-									<option value="Trochoseris">Trochoseris</option>
-									<option value="Trochosmilia">Trochosmilia</option>
-									<option value="Tryplasma">Tryplasma</option>
-									<option value="Vaughania">Vaughania</option>
-									<option value="Zaphrentis">Zaphrentis</option>
-								</optgroup>
-						  	</select>
-						  -->
-
 							<select class="form-control" id="fossilGenusSelect" ng-model="$parent.entry.genus">
 								<option value="-1" selected>All Genuses</option>
 								<optgroup label="Coral genera">	
