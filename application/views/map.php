@@ -57,11 +57,6 @@
 </head>
 
 <body>
-
-	<div class="map-header">
-		<img class="map-header-img" src="http://assets.manchester.ac.uk/logos/museum-1.png" alt="Hello there" height="84" width="169">
-	</div>
-
 	<!-- Header -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
@@ -84,12 +79,16 @@
 	</nav>
 
 	<!-- Map -->
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="map-section">
-					<div id="googleMap" ng-controller='GoogleMap'>
-				</div>
+	<div ng-controller='GoogleMap'>
+		<div class="map-header">
+			<img class="map-header-img" src="http://assets.manchester.ac.uk/logos/museum-1.png" alt="Hello there" height="84" width="169">
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="map-section">
+						<div id="googleMap"></div>
+					</div>
 				</div>
 			</div>
 		</div>
