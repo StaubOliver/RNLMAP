@@ -99,7 +99,7 @@
 		<div class="row">
 			<!-- Filter -->
 			<div class="col-md-6" ng-controller='filterSection'>
-				<div class="filter-section" ng-controller='filter'>
+				<div class="filter-section">
 			
 					<div class="row">
 						<div class="col-md-12 filter-title">
