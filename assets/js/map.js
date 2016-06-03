@@ -1,6 +1,13 @@
 var actualmap;
 var markers = [];
 
+var filter = array():
+filter['project'] = "-1";
+filter['genus'] = "-1";
+filter['ageMin'] = "Quaternary";
+filter['ageMax'] = 'Precambrian';
+filter['collector'] = '-1';
+
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
   for (var i = 0; i < markers.length; i++) {
@@ -59,11 +66,11 @@ var map = angular.module('map', [])
 
 map.controller('filterSection', function($scope){
 	
-	$scope.selectedProject = "-1";	
-	$scope.selectedGenus = "-1";
-	$scope.selectedAgeMin = "Quaternary";
-	$scope.selectedAgeMax = "Precambrian";
-	$scope.selectedCollector = "-1";
+	$scope.selectedProject = filter['project'];
+	$scope.selectedGenus = filter['genus'];
+	$scope.selectedAgeMin = filter['ageMin'];
+	$scope.selectedAgeMax = filter['ageMax'];
+	$scope.selectedCollector = filter['collector'];
 
 	$scope.newGenus = function(){
 		refresh();
