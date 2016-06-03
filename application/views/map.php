@@ -39,7 +39,7 @@
 	<!-- Google Map API -->
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	
-	<script>
+	<!--<script>
 		function initialize() {
 		  var mapProp = {
 		    center:new google.maps.LatLng(51.508742,-0.120850),
@@ -52,7 +52,7 @@
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 
-	</script>
+	</script>-->
 
 </head>
 
@@ -88,7 +88,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="map-section">
-					<div id="googleMap">
+					<div id="googleMap" ng-controller='GoogleMap'>
 				</div>
 				</div>
 			</div>
