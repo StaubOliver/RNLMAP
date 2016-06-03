@@ -80,7 +80,7 @@
 		<div class="map-header">
 			<img class="map-header-img" src="http://assets.manchester.ac.uk/logos/museum-1.png" alt="Hello there" height="84" width="169">
 		</div>
-		<div class="map-loading" ng-model="loading" ng-show="loading">
+		<div class="map-loading" ng-show="loading">
 			<h2 >Loading...</h2>
 		</div>
 		<div class="container-fluid">
