@@ -68,7 +68,7 @@ var map = angular.module('map', [])
 	actualmap = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 	
-
+	refresh();
 	
 
 });
