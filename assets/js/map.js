@@ -61,7 +61,24 @@ var map = angular.module('map', [])
 			createMarkers(info);	
 		});
 	});
-}
+
+	var refresh = function(){
+		deleteMarkers;
+		//retrieve the fossils and put them as marker in the map
+		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
+			data.forEach(function(item, index){
+				var info = [];
+				info['lat'] = item['lattitude'];
+				info['lng'] = item['longitude'];
+				info['title'] = item['genus'];
+				createMarkers(info);	
+				console.log(info);
+			});
+		});
+	}
+
+	refresh();
+});
 
 map.controller('filterSection', function($scope, $http){
 
