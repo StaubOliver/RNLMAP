@@ -58,11 +58,11 @@ var map = angular.module('map', [])
 });
 
 map.controller('filterSection', function($scope){
-$scope.selectedGenus = "-1";
+$scope.selectedGenus = "-1";	
 
 
 $scope.$newGenus = function(){
-	console.log($selectedGenus);
+	alert('genus is : '+selectedGenus);
 }
 
 });
