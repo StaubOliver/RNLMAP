@@ -56,7 +56,6 @@ var map = angular.module('map', [])
 
 	deleteMarkers;
 	//retrieve the fossils and put them as marker in the map
-	console.log('/api/map/loadfossils/'+filter+'/-1/ee/ee/-1/-1/-1/-1/-1/-1');
 
 	$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 		data.forEach(function(item, index){
