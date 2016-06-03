@@ -48,7 +48,7 @@ function refresh($http) {
 			info['lng'] = item['longitude'];
 			info['title'] = item['genus'];
 			createMarkers(info);	
-	
+			console.log(info);
 		});
 	});
 }
