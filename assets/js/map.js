@@ -30,7 +30,8 @@ var map = angular.module('map', [])
 			info['lat'] = item['lattitude'];
 			info['lng'] = item['longitude'];
 			info['title'] = item['genus'];
-
+			createMarkers(info);
+	
 		});
 
 
