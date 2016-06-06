@@ -35,7 +35,7 @@ function createMarkers(info){
 	markers.push(marker);
 }
 
-var refresh = function()
+function refresh()
 {
 	deleteMarkers;
 	//retrieve the fossils and put them as marker in the map
