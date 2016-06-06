@@ -276,4 +276,87 @@ class MapModel extends CI_Model {
     }*/
 
 
+    function updatelocation($filter){
+
+        //using the data from the filter we create the where statement for querying the database
+        $where = [];
+        $i = 0;
+        
+        if ($data['genus'] != "-1"){
+            $where[$i] = "genus = '" . $data['genus']."'";
+            $i += 1;
+        }
+
+        if ($data['collector'] != "-1"){
+            $where[$i] = "collector = '" . $data['collector']."'";
+            $i += 1;
+        }
+
+        $where_string = "";
+
+        if ($i != 0)
+        {
+            for ($j=0; $j<$i-1; $j++)
+            {
+                $where_string .= $where[$j] . " AND ";
+            }
+            
+            $where_string .= $where[$i-1]; 
+        }
+        else {
+            $where_string = " 1";
+        }
+
+        $query=NULL;
+
+        //Now we look at the projects_master table to give us the data_table foreach project
+        if($data['project']=="-1"){
+            $query = $this->db->query('SELECT id, name, image, blurb, data_table, image_table FROM projects_master');
+        }
+
+        $return = array();
+        
+        if($query->num_rows() > 0) {
+            foreach($query->result_array() as $row)
+            {
+                //we retrieve the data from each fossil from each project
+                $query2 = $this->db->query('SELECT data_id, image_id, genus, species, age, country, place, collector FROM ' . $row["data_table"].' WHERE '.$where_string.' limit 10');
+
+                $table = $row['data_table'];
+
+                //return $query2->result_array(); 
+    
+                //if($query2->num_rows>0){
+                //$return[] = $query2->result_array();
+                //}
+                foreach ($query2->result_array() as $row)
+                {
+                    $temp = $this->geocode($row['country'].' '.$row['place']);
+                    
+                    if ($temp != false) {
+                        $row['lattitude'] = $temp[0];
+                        $row['longitude'] = $temp[1];
+
+                        $this->db->where('data_id',$row['data_id');
+
+                        $data = array(
+                            'lat' => $temp[0],
+                            'lng' => $temp[1]
+                            );
+
+                    $this->db->update($table, $data);
+
+
+                    
+                    }
+
+                    //return $row;
+                    $return[] = $row; 
+                }       
+            }
+            //return the data
+            return $return;
+        }
+    }
+
 }
