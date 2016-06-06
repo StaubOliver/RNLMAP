@@ -137,8 +137,12 @@ class MapModel extends CI_Model {
 
                     $query3 = $this->db->query("SELECT image_url FROM ".$image_table." WHERE image_id=".$row["image_id"]);
 
-                    $url = $query3->result_array();
-                    $row['url'] = $url[0];
+                    
+                    if($query3->num_rows() > 0) {
+                        foreach ($query3->result() as $u) {
+                            $row['url'] = $u->image_url;
+                        }
+                    }
                     //return $row;
                     if ($row['lat'] != "") {
                         $return[] = $row; 
