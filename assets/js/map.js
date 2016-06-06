@@ -28,7 +28,7 @@ function deleteMarkers() {
   markers = [];
 }
 
-function showimg(url){
+function show_img(url){
 	console.log(url);
 }
 
