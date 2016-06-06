@@ -28,6 +28,10 @@ function deleteMarkers() {
   markers = [];
 }
 
+function showimg(url){
+	console.log(url);
+}
+
 
 
 
@@ -99,7 +103,7 @@ var map = angular.module('map', [])
 					+ "<div class='row'>"
 
 						+ "<div class='col-md-6'>"
-							+ "<img src='"+item["url"]+"' class='map-infowindow-img img-responsive'>"
+							+ "<img src='"+item["url"]+"' class='map-infowindow-img' on-click='show_img("+item["url"]+")'>"
 						+ "</div>"
 
 						+ "<div class='col-md-6'>"
