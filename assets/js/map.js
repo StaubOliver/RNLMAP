@@ -1,6 +1,9 @@
 var actualmap;
 var markers = [];
 
+infoWindow = new google.maps.InfoWindow();
+
+
 var filter = [];
 filter['project'] = "-1";
 filter['genus'] = "-1";
@@ -62,11 +65,9 @@ var map = angular.module('map', [])
 			title: info['title']
 		});
 
-		var infoWindow = new google.maps.InfoWindow({
-			content: info['content']
-		});
-
 		marker.addListener("click", function(){
+			infoWindow.close;
+			infoWindow.setContent(info["content"])
 			infoWindow.open('actualmap', marker);
 		});
 
