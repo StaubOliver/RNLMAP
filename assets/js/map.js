@@ -160,10 +160,34 @@ map.controller('filterSection', function($scope, $http){
 				if (item['genus'] == 'Not listed')
 				{
 					info['title'] = item['genuscustom'] + " " + item['species'];
+					info_window_genus = item['genuscustom'];
 				}
 				else{
 					info['title'] = item['genus'] + " " + item['species'];
+					info_window_genus = item['genus'];
 				}
+				
+				info['content'] = 
+				"<div class='container-fluid map-infowindow'>"
+					+ "<div class='row'>"
+
+						+ "<div class='col-md-6'>"
+							+ "<img src='"+item["url"]+"' class='map-infowindow-img' onclick='show_img('"+item["url"]+"')'>"
+						+ "</div>"
+
+						+ "<div class='col-md-6'>"
+
+							+ "<p> "
+								+ "<strong> Genus : </strong> " + info_window_genus
+								+ "</br> <strong> Species : </strong> " + item["species"]
+								+ "</br> <strong> Age : </strong>" + item['age']
+								+ "</br> <strong> Collector : </strong>"+ item["collector"]
+							+ "</p>"
+
+						+ "</div>"
+					+ "</div>"
+				+ "</div>"
+				;
 				createMarkers(info);	
 			});
 		});
