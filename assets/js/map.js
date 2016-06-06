@@ -28,11 +28,28 @@ function deleteMarkers() {
   markers = [];
 }
 
+function createMarkers(info){
+		var marker = new google.maps.Marker({
+			map: actualmap,
+			animation: google.maps.Animation.DROP,
+			position: new google.maps.LatLng(info['lat'], info['lng']),
+			title: info['title']
+		});
+
+		marker.addListener("click", function(){
+			infoWindow.close;
+			infoWindow.setContent(info["content"])
+			infoWindow.open('actualmap', marker);
+		});
+
+		markers.push(marker);
+	}
+
 function show_img(url){
 	console.log(url);
 }
 
-
+	
 
 
 var map = angular.module('map', [])
@@ -61,22 +78,7 @@ var map = angular.module('map', [])
 		});
 	});*/
 
-	function createMarkers(info){
-		var marker = new google.maps.Marker({
-			map: actualmap,
-			animation: google.maps.Animation.DROP,
-			position: new google.maps.LatLng(info['lat'], info['lng']),
-			title: info['title']
-		});
 
-		marker.addListener("click", function(){
-			infoWindow.close;
-			infoWindow.setContent(info["content"])
-			infoWindow.open('actualmap', marker);
-		});
-
-		markers.push(marker);
-	}
 
 	function refresh()
 	{
