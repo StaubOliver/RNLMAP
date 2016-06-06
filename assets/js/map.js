@@ -90,17 +90,18 @@ var map = angular.module('map', [])
 				var info = [];
 				info['lat'] = item['lat'];
 				info['lng'] = item['lng'];
-				var title = "";
+				var info_window_genus = "";
+
 				if (item['genus'] == 'Not listed')
 				{
-					title = item['genuscustom'] + " " + item['species'];
+					info['title'] = item['genuscustom'] + " " + item['species'];
+					info_window_genus = item['genuscustom'];
 				}
 				else{
-					title = item['genus'] + " " + item['species'];
+					info['title'] = item['genus'] + " " + item['species'];
+					info_window_genus = item['genus'];
 				}
 				
-				info['title'] = title;
-
 				info['content'] = 
 				"<div class='container-fluid map-infowindow'>"
 					+ "<div class='row'>"
@@ -112,7 +113,7 @@ var map = angular.module('map', [])
 						+ "<div class='col-md-6'>"
 
 							+ "<p> "
-								+ "<strong> Genus : </strong> " + title
+								+ "<strong> Genus : </strong> " + info_window_genus
 								+ "</br> <strong> Species : </strong> " + item["species"]
 								+ "</br> <strong> Age : </strong>" + item['age']
 								+ "</br> <strong> Collector : </strong>"+ item["collector"]
