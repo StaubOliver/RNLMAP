@@ -95,7 +95,7 @@ var map = angular.module('map', [])
 				}
 				
 				info['content'] = 
-				"<div class='container-fluid'>"
+				"<div class='container-fluid map-infowindow'>"
 					+ "<div class='row'>"
 
 						+ "<div class='col-md-6'>"

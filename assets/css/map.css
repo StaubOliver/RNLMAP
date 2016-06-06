@@ -149,3 +149,7 @@ body{
 	left: 200px;
 	background-color: white;
 }
+
+.map-infowindow{
+	width:400px;
+}
