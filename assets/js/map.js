@@ -221,11 +221,12 @@ map.controller('filterSection', function($scope, $http){
 		console.log($a);
 		$scope.activity = {};
 		$scope.activity.activity = $a;
+		$scope.activity.user_id = 5;
 		// Do the ajax call
 		$http({
             method : 'POST',
             url: '/api/map/logmapactivity',
-            data: $scope.activity,
+            data: $.param($scope.activity),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         	
     	}).success(function(data, status, headers, config) {
