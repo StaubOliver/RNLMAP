@@ -67,12 +67,18 @@ var map = angular.module('map', [])
 	var refresh = function(){
 		deleteMarkers;
 		//retrieve the fossils and put them as marker in the map
-		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
+		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 			data.forEach(function(item, index){
 				var info = [];
 				info['lat'] = item['lat'];
 				info['lng'] = item['lng'];
-				info['title'] = item['genus'];
+				if (item['genus'] == 'Not listed')
+				{
+					info['genus'] = item['genuscustom'] + " " + item['species'];
+				}
+				else{
+					info['title'] = item['genus'] + " " + item['species'];
+				}
 				
 				/*info['content'] = "";
 				google.maps.event.addListener(marker, 'click', function(){
@@ -109,7 +115,7 @@ map.controller('filterSection', function($scope, $http){
 	var refresh = function(){
 		deleteMarkers();
 		//retrieve the fossils and put them as marker in the map
-		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
+		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 			data.forEach(function(item, index){
 				var info = [];
 				info['lat'] = item['lat'];

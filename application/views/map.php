@@ -258,7 +258,7 @@
 							<h6>Collector</h6>
 						</div>
 						<div class="col-md-8">
-							<select class="form-control" id="fossilCollectorSelect" ng-model="selectedCollector">
+							<select class="form-control" id="fossilCollectorSelect" ng-model="selectedCollector" ng-change="newCollector()">
 								<option value="-1" selected>All Collectors</option>
 								<optgroup label="Collectors">	
 								<?php
