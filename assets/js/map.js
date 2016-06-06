@@ -97,7 +97,8 @@ var map = angular.module('map', [])
 				info['content'] = 
 				"<p> "
 					+ "<strong> Genus : </strong> " + item["genus"]
-					+ "<strong> Species : </strong> " + item["species"]
+					+ "</br> <strong> Species : </strong> " + item["species"]
+					+ "</br> <strong> Age : </strong>" + item['age']
 					+ "</br> <strong> Collector : </strong>"+ item["collector"]
 
 				+ "</p>"
