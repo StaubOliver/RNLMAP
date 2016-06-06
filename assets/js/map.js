@@ -95,13 +95,25 @@ var map = angular.module('map', [])
 				}
 				
 				info['content'] = 
-				"<p> "
-					+ "<strong> Genus : </strong> " + item["genus"]
-					+ "</br> <strong> Species : </strong> " + item["species"]
-					+ "</br> <strong> Age : </strong>" + item['age']
-					+ "</br> <strong> Collector : </strong>"+ item["collector"]
+				"<div class='container-fluid'>"
+					+ "<div class='row'>"
 
-				+ "</p>"
+						+ "<div class='col-md-6'>"
+
+						+ "</div>"
+
+						+ "<div class='col-md-6'>"
+
+							+ "<p> "
+								+ "<strong> Genus : </strong> " + item["genus"]
+								+ "</br> <strong> Species : </strong> " + item["species"]
+								+ "</br> <strong> Age : </strong>" + item['age']
+								+ "</br> <strong> Collector : </strong>"+ item["collector"]
+							+ "</p>"
+
+						+ "</div>"
+					+ "</div>"
+				+ "</div>"
 				;
 
 				createMarkers(info);	
