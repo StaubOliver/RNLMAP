@@ -85,7 +85,6 @@ var map = angular.module('map', [])
 				console.log(info);
 			});
 		});
-		$scope.loading = false;
 	}
 
 	refresh();
