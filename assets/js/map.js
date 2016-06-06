@@ -218,17 +218,16 @@ map.controller('filterSection', function($scope, $http){
 
 	$scope.recordActivity = function($a){
 
-		$scope.activity = $a;
 		console.log($a);
 		// Do the ajax call
 		$http({
             method : 'POST',
             url: '/api/map/logmapactivity',
-            data: $scope.activity,
+            data: $a,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         	
         	}).success(function(data, status, headers, config) {
-				
+				console.log("Success");
 			});
 
 		};
