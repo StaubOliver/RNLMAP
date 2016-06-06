@@ -191,7 +191,7 @@ map.controller('filterSection', function($scope, $http){
 		});
 	}
 
-	var logActivity = function($activity){
+	var logActivity = function($a){
 		console.log($a);
 		$scope.activity = {};
 		$scope.activity.activity = $a;
