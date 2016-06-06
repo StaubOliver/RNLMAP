@@ -222,7 +222,7 @@ map.controller('filterSection', function($scope, $http){
 		// Do the ajax call
 		$http({
             method : 'POST',
-            url: '/api/api/logmapactivity',
+            url: '/api/logmapactivity',
             data: $scope.activity,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         	
