@@ -94,7 +94,14 @@ var map = angular.module('map', [])
 					info['title'] = item['genus'] + " " + item['species'];
 				}
 				
-				info['content'] = "<p> <strong> Genus : </strong> " + item["genus"] + "</br> <strong> Collector : "+ item["collector"] + "</strong>";
+				info['content'] = 
+				"<p> "
+					+ "<strong> Genus : </strong> " + item["genus"]
+					+ "<strong> Species : </strong> " + item["species"]
+					+ "</br> <strong> Collector : </strong>"+ item["collector"]
+
+				+ "</p>"
+				;
 
 				createMarkers(info);	
 			});
