@@ -337,7 +337,7 @@ class MapModel extends CI_Model {
                         $row['lattitude'] = $temp[0];
                         $row['longitude'] = $temp[1];
 
-                        $this->db->where('data_id',$row['data_id');
+                        $this->db->where('data_id',$row['data_id']);
 
                         $data = array(
                             'lat' => $temp[0],
