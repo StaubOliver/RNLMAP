@@ -124,6 +124,7 @@ map.controller('filterSection', function($scope, $http){
 				createMarkers(info);	
 			});
 		});
+		$scope.nbfossils = markers.length;
 	}
 
 	$scope.newProject = function (){
