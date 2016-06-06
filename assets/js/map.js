@@ -191,6 +191,22 @@ map.controller('filterSection', function($scope, $http){
 		});
 	}
 
+	var logActivity = function($activity){
+		console.log($a);
+		$scope.activity = {};
+		$scope.activity.activity = $a;
+		// Do the ajax call
+		$http({
+            method : 'POST',
+            url: '/api/map/logmapactivity',
+            data: $.param($scope.activity),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        	
+    	}).success(function(data, status, headers, config) {
+			console.log("success")
+		});
+	}
+
 	$scope.newProject = function (){
 		filter['project'] = $scope.selectedProject;
 		refresh();
@@ -219,20 +235,7 @@ map.controller('filterSection', function($scope, $http){
 	}
 
 	$scope.recordActivity = function($a){
-
-		console.log($a);
-		$scope.activity = {};
-		$scope.activity.activity = $a;
-		// Do the ajax call
-		$http({
-            method : 'POST',
-            url: '/api/map/logmapactivity',
-            data: $.param($scope.activity),
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        	
-    	}).success(function(data, status, headers, config) {
-			console.log("success")
-		});
+		logActivity($a);
 	};
 
 
