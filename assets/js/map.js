@@ -109,7 +109,7 @@ map.controller('filterSection', function($scope, $http){
 	$scope.selectedAgeMax = "Precambrian";
 	$scope.selectedCollector = "-1";
 	*/
-	/*
+	
 	var refresh = function(){
 		deleteMarkers();
 		//retrieve the fossils and put them as marker in the map
@@ -128,31 +128,31 @@ map.controller('filterSection', function($scope, $http){
 				createMarkers(info);	
 			});
 		});
-	}*/
+	}
 
 	$scope.newProject = function (){
 		filter['project'] = $scope.selectedProject;
-		refresh($http);
+		refresh();
 	}
 
 	$scope.newGenus = function(){
 		filter['genus'] = $scope.selectedGenus;
-		refresh($http);
+		refresh();
 	}
 
 	$scope.newAgeMin = function(){
 		filter['ageMin'] = $scope.selectedAgeMin;
-		refresh($http);
+		refresh();
 	}
 
 	$scope.newAgeMax = function(){
 		filter['ageMax'] = $scope.selectedAgeMax;
-		refresh($http);
+		refresh();
 	}
 
 	$scope.newCollector = function(){
 		filter['collector'] = $scope.selectedCollector;
-		refresh($http);
+		refresh();
 	}
 
 });
