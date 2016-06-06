@@ -74,7 +74,7 @@ var map = angular.module('map', [])
 				info['lng'] = item['lng'];
 				if (item['genus'] == 'Not listed')
 				{
-					info['genus'] = item['genuscustom'] + " " + item['species'];
+					info['title'] = item['genuscustom'] + " " + item['species'];
 				}
 				else{
 					info['title'] = item['genus'] + " " + item['species'];
@@ -120,7 +120,7 @@ map.controller('filterSection', function($scope, $http){
 				info['lng'] = item['lng'];
 				if (item['genus'] == 'Not listed')
 				{
-					info['genus'] = item['genuscustom'] + " " + item['species'];
+					info['title'] = item['genuscustom'] + " " + item['species'];
 				}
 				else{
 					info['title'] = item['genus'] + " " + item['species'];
