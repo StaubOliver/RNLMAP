@@ -70,8 +70,8 @@ var map = angular.module('map', [])
 		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 			data.forEach(function(item, index){
 				var info = [];
-				info['lat'] = item['lattitude'];
-				info['lng'] = item['longitude'];
+				info['lat'] = item['lat'];
+				info['lng'] = item['lng'];
 				info['title'] = item['genus'];
 				
 				/*info['content'] = "";
@@ -113,8 +113,8 @@ map.controller('filterSection', function($scope, $http){
 		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/-1/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 			data.forEach(function(item, index){
 				var info = [];
-				info['lat'] = item['lattitude'];
-				info['lng'] = item['longitude'];
+				info['lat'] = item['lat'];
+				info['lng'] = item['lng'];
 				info['title'] = item['genus'];
 				createMarkers(info);	
 			});
