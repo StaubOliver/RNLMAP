@@ -35,11 +35,11 @@ function createMarkers(info){
 	markers.push(marker);
 }
 
-function refresh()
+function refresh(http)
 {
 	deleteMarkers;
 	//retrieve the fossils and put them as marker in the map
-	$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
+	http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
 		data.forEach(function(item, index){
 			var info = [];
 			info['lat'] = item['lat'];
@@ -92,7 +92,7 @@ var map = angular.module('map', [])
 
 	
 
-	refresh();
+	refresh($http);
 });
 
 map.controller('filterSection', function($scope, $http){
