@@ -223,14 +223,13 @@ map.controller('filterSection', function($scope, $http){
 		$http({
             method : 'POST',
             url: '/api/map/logmapactivity',
-            data: JSON.stringify({activity: $a}),
+            data: {activity: $a},
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         	
-        	}).success(function(data, status, headers, config) {
-				console.log("success")
-			});
-
-		};
+    	}).success(function(data, status, headers, config) {
+			console.log("success")
+		});
+	};
 
 
 
