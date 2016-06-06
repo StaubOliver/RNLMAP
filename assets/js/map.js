@@ -31,7 +31,6 @@ function deleteMarkers() {
 function createMarkers(info){
 		var marker = new google.maps.Marker({
 			map: actualmap,
-			animation: google.maps.Animation.DROP,
 			position: new google.maps.LatLng(info['lat'], info['lng']),
 			title: info['title']
 		});
