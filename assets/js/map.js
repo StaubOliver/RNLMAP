@@ -25,48 +25,7 @@ function deleteMarkers() {
   markers = [];
 }
 
-function createMarkers(info){
-	var marker = new google.maps.Marker({
-		map: actualmap,
-		animation: google.maps.Animation.DROP,
-		position: new google.maps.LatLng(info['lat'], info['lng']),
-		title: info['title']
-	});
 
-	var infoWindow = new google.maps.InfoWindow({
-		content: info['content']
-	});
-
-	marker.addListener("click", function(){
-		infoWindow.open('actualmap', marker);
-	});
-
-	markers.push(marker);
-}
-
-function refresh(http)
-{
-	deleteMarkers;
-	//retrieve the fossils and put them as marker in the map
-	http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
-		data.forEach(function(item, index){
-			var info = [];
-			info['lat'] = item['lat'];
-			info['lng'] = item['lng'];
-			if (item['genus'] == 'Not listed')
-			{
-				info['title'] = item['genuscustom'] + " " + item['species'];
-			}
-			else{
-				info['title'] = item['genus'] + " " + item['species'];
-			}
-			
-			info['content'] = "<p> <strong> Genus : </strong> " + item["genus"] + "</br> <strong> Collector : "+ item["collector"] + "</strong>";
-
-			createMarkers(info);	
-		});
-	});
-}
 
 
 var map = angular.module('map', [])
@@ -95,9 +54,50 @@ var map = angular.module('map', [])
 		});
 	});*/
 
-	
+	function createMarkers(info){
+		var marker = new google.maps.Marker({
+			map: actualmap,
+			animation: google.maps.Animation.DROP,
+			position: new google.maps.LatLng(info['lat'], info['lng']),
+			title: info['title']
+		});
 
-	refresh($http);
+		var infoWindow = new google.maps.InfoWindow({
+			content: info['content']
+		});
+
+		marker.addListener("click", function(){
+			infoWindow.open('actualmap', marker);
+		});
+
+		markers.push(marker);
+	}
+
+	function refresh()
+	{
+		deleteMarkers;
+		//retrieve the fossils and put them as marker in the map
+		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
+			data.forEach(function(item, index){
+				var info = [];
+				info['lat'] = item['lat'];
+				info['lng'] = item['lng'];
+				if (item['genus'] == 'Not listed')
+				{
+					info['title'] = item['genuscustom'] + " " + item['species'];
+				}
+				else{
+					info['title'] = item['genus'] + " " + item['species'];
+				}
+				
+				info['content'] = "<p> <strong> Genus : </strong> " + item["genus"] + "</br> <strong> Collector : "+ item["collector"] + "</strong>";
+
+				createMarkers(info);	
+			});
+		});
+	}
+
+	refresh();
 });
 
 map.controller('filterSection', function($scope, $http){
