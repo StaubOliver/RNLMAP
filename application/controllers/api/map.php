@@ -188,8 +188,8 @@ class Map extends MY_Controller {
 	public function logmapactivity(){
 		//get the data
 		$user_id = ($this->input->post('user_id')) ? $this->input->post('user_id'): 0;
-		$time = date('Y-m-d H;i:s');
-		$kind = $this->input->post('kind');
+		$time = date('Y-m-d H:i:s');
+		$activity = $this->input->post('activity');
 
 		$data = array(
 			'user_id' => $user_id,
@@ -198,6 +198,7 @@ class Map extends MY_Controller {
 		);
 
 		//insert the data in the database
+
 		$this->db->insert('map_activity', $data);
 	}
 

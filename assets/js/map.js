@@ -47,7 +47,6 @@ function createMarkers(info){
 function show_img(url){
 	console.log(url);
 }
-
 	
 
 
@@ -215,6 +214,25 @@ map.controller('filterSection', function($scope, $http){
 	$scope.newCollector = function(){
 		filter['collector'] = $scope.selectedCollector;
 		refresh();
+	}
+
+	$scope.recordActivity = function($a){
+
+		$scope.activity = $a;
+		// Do the ajax call
+		$http({
+            method : 'POST',
+            url: '/api/api/logmapactivity',
+            data: $scope.activity,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).
+			success(function(data, status, headers, config) {
+				
+				}
+			}).
+			error(function(data, status, headers, config) {
+
+			});
 	}
 
 });
