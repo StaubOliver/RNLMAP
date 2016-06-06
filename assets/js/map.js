@@ -210,13 +210,12 @@ map.controller('filterSection', function($scope, $http){
 	$scope.newProject = function (){
 		filter['project'] = $scope.selectedProject;
 		refresh();
-		$scope.recordActivity("Genus Selector change value")
 	}
 
 	$scope.newGenus = function(){
 		filter['genus'] = $scope.selectedGenus;
 		refresh();
-		$
+		logActivity("Genus Selector change value")
 	}
 
 	$scope.newAgeMin = function(){
