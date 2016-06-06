@@ -189,7 +189,7 @@ class Map extends MY_Controller {
 		//get the data
 		$user_id = ($this->input->post('user_id')) ? $this->input->post('user_id'): 0;
 		$time = date('Y-m-d H:i:s');
-		$activity = $this->input->post('activity');
+		$activity = $this->input->post();
 
 		$data = array(
 			'user_id' => $user_id,
