@@ -31,11 +31,8 @@ function createMarkers(info){
 		position: new google.maps.LatLng(info['lat'], info['lng']),
 		title: info['title']
 	});
-
 	markers.push(marker);
 }
-
-
 
 
 var map = angular.module('map', [])
@@ -82,7 +79,7 @@ var map = angular.module('map', [])
 */
 
 				createMarkers(info);	
-				console.log(info);
+				
 			});
 		});
 		$scope.loading = false;
@@ -115,8 +112,9 @@ map.controller('filterSection', function($scope, $http){
 				var info = [];
 				info['lat'] = item['lat'];
 				info['lng'] = item['lng'];
-				info['title'] = item['genus'];
+				info['title'] = item['genus']+ ' ' + item['data_id'];
 				createMarkers(info);	
+				console.log(info);
 			});
 		});
 	}

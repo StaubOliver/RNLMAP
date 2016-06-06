@@ -136,7 +136,9 @@ class MapModel extends CI_Model {
                     }*/
 
                     //return $row;
-                    $return[] = $row; 
+                    if (row['lat'] != "") {
+                        $return[] = $row; 
+                    }
                 }		
     		}
             //return the data
