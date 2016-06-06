@@ -101,7 +101,6 @@ map.controller('filterSection', function($scope, $http){
 	$scope.selectedAgeMin = filter['ageMin'];
 	$scope.selectedAgeMax = filter['ageMax'];
 	$scope.selectedCollector = filter['collector'];
-	$scope.nbfossils = markers.length;
 	/*
 	$scope.selectedProject = "-1";
 	$scope.selectedGenus = "-1";
@@ -128,8 +127,6 @@ map.controller('filterSection', function($scope, $http){
 				createMarkers(info);	
 			});
 		});
-		$scope.nbfossils = markers.length;
-		console.log(markers.length);
 	}
 
 	$scope.newProject = function (){
