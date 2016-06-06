@@ -99,7 +99,7 @@ var map = angular.module('map', [])
 					+ "<div class='row'>"
 
 						+ "<div class='col-md-6'>"
-
+							+ "<img src='"+item["url"]+"' class='img-responsive'"
 						+ "</div>"
 
 						+ "<div class='col-md-6'>"
