@@ -118,7 +118,13 @@ map.controller('filterSection', function($scope, $http){
 				var info = [];
 				info['lat'] = item['lat'];
 				info['lng'] = item['lng'];
-				info['title'] = item['genus'];
+				if (item['genus'] == 'Not listed')
+				{
+					info['genus'] = item['genuscustom'] + " " + item['species'];
+				}
+				else{
+					info['title'] = item['genus'] + " " + item['species'];
+				}
 				createMarkers(info);	
 			});
 		});
