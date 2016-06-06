@@ -225,14 +225,16 @@ map.controller('filterSection', function($scope, $http){
             url: '/api/api/logmapactivity',
             data: $scope.activity,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        }).
-			success(function(data, status, headers, config) {
+        	
+        	}).success(function(data, status, headers, config) {
 				
-				}
-			}).
-			error(function(data, status, headers, config) {
-
 			});
-	}
+
+		};
+
+
+
+
+
 
 });
