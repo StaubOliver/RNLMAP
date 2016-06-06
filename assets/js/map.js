@@ -28,8 +28,17 @@ function deleteMarkers() {
 function createMarkers(info){
 	var marker = new google.maps.Marker({
 		map: actualmap,
+		animation: google.maps.Animation.DROP,
 		position: new google.maps.LatLng(info['lat'], info['lng']),
 		title: info['title']
+	});
+
+	var infoWindow = new google.maps.InfoWindow({
+		content: info['content']
+	});
+
+	marker.addListener("click", function(){
+		infoWindow.open('actualmap', marker);
 	});
 
 	markers.push(marker);
@@ -52,12 +61,8 @@ function refresh(http)
 				info['title'] = item['genus'] + " " + item['species'];
 			}
 			
-			/*info['content'] = "";
-			google.maps.event.addListener(marker, 'click', function(){
-				infoWindow.setContent('<h2>'+info['title']+'</h2>');
-				infoWindow.open($scope.actualmap, marker);
-			});
-*/
+			info['content'] = "<p> <strong> Genus : </strong> " + item["genus"] + "</br> <strong> Collector : "+ item["collector"] + "</strong>";
+
 			createMarkers(info);	
 		});
 	});
