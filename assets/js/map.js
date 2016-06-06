@@ -90,14 +90,17 @@ var map = angular.module('map', [])
 				var info = [];
 				info['lat'] = item['lat'];
 				info['lng'] = item['lng'];
+				var title = "";
 				if (item['genus'] == 'Not listed')
 				{
-					info['title'] = item['genuscustom'] + " " + item['species'];
+					title = item['genuscustom'] + " " + item['species'];
 				}
 				else{
-					info['title'] = item['genus'] + " " + item['species'];
+					title = item['genus'] + " " + item['species'];
 				}
 				
+				info['title'] = title;
+
 				info['content'] = 
 				"<div class='container-fluid map-infowindow'>"
 					+ "<div class='row'>"
@@ -109,7 +112,7 @@ var map = angular.module('map', [])
 						+ "<div class='col-md-6'>"
 
 							+ "<p> "
-								+ "<strong> Genus : </strong> " + item["genus"]
+								+ "<strong> Genus : </strong> " + title
 								+ "</br> <strong> Species : </strong> " + item["species"]
 								+ "</br> <strong> Age : </strong>" + item['age']
 								+ "</br> <strong> Collector : </strong>"+ item["collector"]
