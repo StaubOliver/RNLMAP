@@ -35,7 +35,33 @@ function createMarkers(info){
 	markers.push(marker);
 }
 
-
+var refresh = function()
+{
+	deleteMarkers;
+	//retrieve the fossils and put them as marker in the map
+	$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
+		data.forEach(function(item, index){
+			var info = [];
+			info['lat'] = item['lat'];
+			info['lng'] = item['lng'];
+			if (item['genus'] == 'Not listed')
+			{
+				info['title'] = item['genuscustom'] + " " + item['species'];
+			}
+			else{
+				info['title'] = item['genus'] + " " + item['species'];
+			}
+			
+			/*info['content'] = "";
+			google.maps.event.addListener(marker, 'click', function(){
+				infoWindow.setContent('<h2>'+info['title']+'</h2>');
+				infoWindow.open($scope.actualmap, marker);
+			});
+*/
+			createMarkers(info);	
+		});
+	});
+}
 
 
 var map = angular.module('map', [])
@@ -64,32 +90,7 @@ var map = angular.module('map', [])
 		});
 	});*/
 
-	var refresh = function(){
-		deleteMarkers;
-		//retrieve the fossils and put them as marker in the map
-		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
-			data.forEach(function(item, index){
-				var info = [];
-				info['lat'] = item['lat'];
-				info['lng'] = item['lng'];
-				if (item['genus'] == 'Not listed')
-				{
-					info['title'] = item['genuscustom'] + " " + item['species'];
-				}
-				else{
-					info['title'] = item['genus'] + " " + item['species'];
-				}
-				
-				/*info['content'] = "";
-				google.maps.event.addListener(marker, 'click', function(){
-					infoWindow.setContent('<h2>'+info['title']+'</h2>');
-					infoWindow.open($scope.actualmap, marker);
-				});
-*/
-				createMarkers(info);	
-			});
-		});
-	}
+	
 
 	refresh();
 });
