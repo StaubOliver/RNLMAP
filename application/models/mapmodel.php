@@ -276,7 +276,7 @@ class MapModel extends CI_Model {
     }*/
 
 
-    function updatelocation($filter){
+    function updatelocation($data){
 
         //using the data from the filter we create the where statement for querying the database
         $where = [];
@@ -339,12 +339,12 @@ class MapModel extends CI_Model {
 
                         $this->db->where('data_id',$row['data_id']);
 
-                        $data = array(
+                        $up = array(
                             'lat' => $temp[0],
                             'lng' => $temp[1]
                             );
 
-                    $this->db->update($table, $data);
+                        $this->db->update($table, $up);
 
 
                     
