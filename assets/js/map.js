@@ -78,7 +78,7 @@ var map = angular.module('map', [])
 	{
 		deleteMarkers;
 
-		infoWindow = new google.maps.InfoWindow({maxWidth:400px});
+		infoWindow = new google.maps.InfoWindow({maxWidth:400});
 
 		//retrieve the fossils and put them as marker in the map
 		$http.get('/api/map/loadfossils/'+filter['genus']+'/-1/ee/ee/'+filter['collector']+'/-1/-1/-1/-1/-1').success(function(data, status, headers, config){
