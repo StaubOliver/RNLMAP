@@ -86,9 +86,7 @@ var map = angular.module('map', [])
 					infoWindow.open($scope.actualmap, marker);
 				});
 */
-
 				createMarkers(info);	
-				console.log(info);
 			});
 		});
 	}
@@ -125,7 +123,7 @@ map.controller('filterSection', function($scope, $http){
 			});
 		});
 		$scope.nbfossils = markers.length;
-		console.log(markers.size());
+		console.log(markers.length);
 	}
 
 	$scope.newProject = function (){
