@@ -194,11 +194,13 @@ map.controller('filterSection', function($scope, $http){
 	$scope.newProject = function (){
 		filter['project'] = $scope.selectedProject;
 		refresh();
+		$scope.recordActivity("Genus Selector change value")
 	}
 
 	$scope.newGenus = function(){
 		filter['genus'] = $scope.selectedGenus;
 		refresh();
+		$
 	}
 
 	$scope.newAgeMin = function(){
@@ -221,7 +223,6 @@ map.controller('filterSection', function($scope, $http){
 		console.log($a);
 		$scope.activity = {};
 		$scope.activity.activity = $a;
-		$scope.activity.user_id = 5;
 		// Do the ajax call
 		$http({
             method : 'POST',
