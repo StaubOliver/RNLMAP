@@ -219,6 +219,7 @@ map.controller('filterSection', function($scope, $http){
 	$scope.recordActivity = function($a){
 
 		$scope.activity = $a;
+		console.log($a);
 		// Do the ajax call
 		$http({
             method : 'POST',
