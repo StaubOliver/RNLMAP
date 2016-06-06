@@ -153,3 +153,7 @@ body{
 .map-infowindow{
 	width:400px;
 }
+
+.map-infowindow-img{
+	max-width: 200px;
+}
