@@ -215,7 +215,7 @@ map.controller('filterSection', function($scope, $http){
 	$scope.newGenus = function(){
 		filter['genus'] = $scope.selectedGenus;
 		refresh();
-		logActivity("Genus Selector Change Value")
+		logActivity("Genus Selector Change Value");
 	}
 
 	$scope.newAgeMin = function(){
@@ -231,6 +231,7 @@ map.controller('filterSection', function($scope, $http){
 	$scope.newCollector = function(){
 		filter['collector'] = $scope.selectedCollector;
 		refresh();
+		logActivity("Collector Selector Change Value");
 	}
 
 	$scope.recordActivity = function($a){

@@ -113,7 +113,7 @@
 							<h6>Projects</h6>
 						</div>
 						<div class="col-md-8">
-							<select class="form-control" id="fossilProjectSelect" ng-model="selectedProject">
+							<select class="form-control" id="fossilProjectSelect" ng-model="selectedProject"  ng-mouseover="recordActivity('Project Selector Hover')">
 								<option value="-1" selected>All Projects</option>
 								<optgroup label="Available projects">	
 								<?php
@@ -167,7 +167,7 @@
 							<h6>Geological Age</h6>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control" id="fossilAge-min" ng-model="selectedAgeMin">
+							<select class="form-control" id="fossilAge-min" ng-model="selectedAgeMin" ng-mouseover="recordActivity('Age Min Hover')">
 						  		<optgroup label="Geological ages">
 									<option value="Quaternary" selected>Quaternary</option>
 									<option value="Pliocene">Pliocene</option>
@@ -209,7 +209,7 @@
 						  	</select>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control" id="fossilAge-max" ng-model="selectedAgeMax">
+							<select class="form-control" id="fossilAge-max" ng-model="selectedAgeMax" ng-mouseover="recordActivity('Age Max Hover')">
 						  		<optgroup label="Geological ages">
 									<option value="Quaternary">Quaternary</option>
 									<option value="Pliocene">Pliocene</option>
@@ -258,7 +258,7 @@
 							<h6>Collector</h6>
 						</div>
 						<div class="col-md-8">
-							<select class="form-control" id="fossilCollectorSelect" ng-model="selectedCollector" ng-change="newCollector()">
+							<select class="form-control" id="fossilCollectorSelect" ng-model="selectedCollector" ng-change="newCollector()"  ng-mouseover="recordActivity('Collector Selector Hover')">
 								<option value="-1" selected>All Collectors</option>
 								<optgroup label="Collectors">	
 								<?php
